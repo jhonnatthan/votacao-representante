@@ -11,6 +11,8 @@
 
 
     $app->get('/', function() {
+        $loginController = new App\Controllers\ExemploController;
+        $loginController->index();
     });
 
     $app->post('/', function (){

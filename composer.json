@@ -1,8 +1,7 @@
 {
     "name": "jhonnatthan/root",
     "require": {
-        "slim/slim": "^3.9",
-        "facebook/graph-sdk": "^5.6"
+        "slim/slim": "^3.9"
     },
     "autoload": {
         "psr-4": {
