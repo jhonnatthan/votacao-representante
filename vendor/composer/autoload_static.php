@@ -8,7 +8,6 @@ class ComposerStaticInit41554a34b1787765b85728e38556eb0b
 {
     public static $files = array (
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
-        'c65d09b6820da036953a371c8c73a9b1' => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook/polyfills.php',
         '636d559b4905de07b1249f30ebda1e8d' => __DIR__ . '/../..' . '/app/helpers.php',
     );
 
@@ -29,7 +28,6 @@ class ComposerStaticInit41554a34b1787765b85728e38556eb0b
         'F' => 
         array (
             'FastRoute\\' => 10,
-            'Facebook\\' => 9,
         ),
         'A' => 
         array (
@@ -57,10 +55,6 @@ class ComposerStaticInit41554a34b1787765b85728e38556eb0b
         'FastRoute\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
-        ),
-        'Facebook\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook',
         ),
         'App\\' => 
         array (
