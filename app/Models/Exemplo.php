@@ -35,12 +35,35 @@
 
             self::connect();
 
+            $table = "users";
+            $data = array(
+                "name" => $name,
+                "email" => $email,
+                "gender" => $gender,
+                "birthdate" =>$birthdate
+            );
+            $returnID = false;
+
+            self::insert($table, $data, $returnID);
         }
 
 
         public static function updateUser($id, $name, $email, $gender, $birthdate) {
 
             self::connect();
+
+            $table = "users";
+            $data = array(
+                "name" => $name,
+                "email" => $email,
+                "gender" => $gender,
+                "birthdate" =>$birthdate
+            );
+            $where = array(
+                "id" => $id
+            );
+
+            self::update($table, $data, $where);
 
         }
 
@@ -49,6 +72,11 @@
 
             self::connect();
 
+            $table = "users";
+            $where = array(
+                "id" => $id
+            );
+            self::delete($table, $where);
         }
     }
 ?>
