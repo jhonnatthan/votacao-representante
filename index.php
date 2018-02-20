@@ -11,12 +11,27 @@
 
 
     $app->get('/', function() {
-        $loginController = new App\Controllers\ExemploController;
-        $loginController->index();
+        $UsersController = new App\Controllers\UserController;
+        $UsersController->index();
     });
 
-    $app->post('/', function (){
+    
+    // exibe o formulário de edição
+    $app->get('/register/{id}', function ($request)
+    {
+        // pega o ID da URL
+        $id = $request->getAttribute('id');
+        $UserController = new \App\Controllers\UserController;
+        $UserController->renderRegister($id);
     });
+     
+    // processa o formulário de edição
+    $app->post('/register/', function ()
+    {
+        $UserController = new \App\Controllers\UserController;
+        $UserController->storeRegister();
+    });
+    
 
     $app->run();
 

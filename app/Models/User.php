@@ -3,7 +3,7 @@
     namespace App\Models;
     use App\Banco;
 
-    class Exemplo extends Banco{
+    class User extends Banco{
 
         public static function selectAll($id = null) {
 
