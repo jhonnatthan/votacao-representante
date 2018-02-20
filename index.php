@@ -15,23 +15,22 @@
         $UsersController->index();
     });
 
-    
+
     // exibe o formulário de edição
-    $app->get('/register/{id}', function ($request)
+    $app->get('/register', function ($request)
     {
         // pega o ID da URL
-        $id = $request->getAttribute('id');
         $UserController = new \App\Controllers\UserController;
-        $UserController->renderRegister($id);
+        $UserController->renderRegister();
     });
-     
+
     // processa o formulário de edição
     $app->post('/register/', function ()
     {
         $UserController = new \App\Controllers\UserController;
         $UserController->storeRegister();
     });
-    
+
 
     $app->run();
 
