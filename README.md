@@ -10,9 +10,9 @@
 
   * PHP 7 ou posterior;
   * Slim Framework 3.9 ou posterior;
-  * Materialize v.0.100.2 ou posterior
-  * MySQL 5.7 ou posterior.
-  * Composer 1.6.3 ou posterior
+  * Materialize v.0.100.2 ou posterior;
+  * MySQL 5.7 ou posterior;
+  * Composer 1.6.3 ou posterior.
 
   ## Autores
 
