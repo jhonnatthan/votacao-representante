@@ -85,6 +85,60 @@ CREATE TABLE IF NOT EXISTS `mydb`.`tb_voto` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- PROCEDURES DE INSERT
+DELIMITER $$
+  CREATE PROCEDURE campanha_insert(IN nome VARCHAR(100), IN descricao TEXT, IN imagem BLOB, IN anonimo TINYINT, IN inicio DATE, IN fim DATE)
+  BEGIN
+    INSERT INTO tb_campanha(cd_campanha, nm_campanha, dsc_campanha, img_campanha, is_anonimo, dt_inicio, dt_fim)
+      SELECT
+        COALESCE(max(cd_campanha)+1, 0),
+        nome,
+        descricao,
+        imagem,
+        anonimo,
+        inicio,
+        fim
+      FROM tb_campanha;
+  END$$
+DELIMITER;
+
+DELIMITER $$
+  CREATE PROCEDURE candidato_insert(IN nome VARCHAR(100), IN descricao TEXT, IN imagem BLOB, IN  campanha INT(11))
+  BEGIN
+    INSERT INTO tb_candidato(cd_candidato, cd_campanha, nm_candidato, dsc_candidato, img_candidato)
+      SELECT
+        COALESCE(max(cd_candidato)+1, 1),
+        campanha,
+        nome,
+        descricao,
+        imagem
+      FROM tb_candidato;
+  END$$
+DELIMITER;
+
+DELIMITER $$
+  CREATE PROCEDURE usuario_insert(IN usuario VARCHAR(32), IN senha VARCHAR(100))
+  BEGIN
+    INSERT INTO tb_usuario
+      SELECT
+        COALESCE(MAX(cd_usuario)+1, 1),
+        SHA1(senha)
+      FROM tb_usuario;
+  END$$
+DELIMITER;
+
+DELIMITER $$
+  CREATE PROCEDURE voto_insert(IN nome varchar(100), IN candidato INT(11), IN usuario INT(11))
+  BEGIN
+    INSERT INTO tb_voto(cd_voto, cd_candidato, cd_usuario, nm_voto)
+      SELECT
+        COALESCE(MAX(cd_voto)+1, 1),
+        cd_candidado,
+        usuario,
+        nome
+      FROM tb_voto;
+  END$$
+DELIMITER;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
