@@ -50,12 +50,12 @@
 
 		/*
 		Exemplo de uso do SELECT na classe:
-			$DB = new \App\DB(); <- instancia o objeto
+			$DB = new \App\Banco(); <- instancia o objeto
 			$tabela = array("exemplo"); <- tabela do SELECT
 			$campos = array("campo1", "campo2"); <- campos do SELECT
 			$stmt = $DB->prepare($DB::select($tabela, $campos)); <- Cria o SELECT e prepara para execução
 			$stmt->execute(); <- execução
-			$dados = $stmt->fetchAll() <- passa para a variavel todos os dados retornados	
+			$dados = $stmt->fetchAll() <- passa para a variavel todos os dados retornados
 		*/
 
 		static function select($tabela, $campos = null, $argumentos = null, $agrupar = null, $havendo = null, $ordernar = null, $limite = null) {
