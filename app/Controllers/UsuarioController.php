@@ -4,7 +4,7 @@ namespace App\Controllers;
 use App\Models\User;
 use App\Models\Criptografia;
 
-class UserController {
+class UsuarioController {
 
     public function index()
     {
