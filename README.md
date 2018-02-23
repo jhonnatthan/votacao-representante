@@ -18,4 +18,8 @@
 
   * Lucas Viana dos Santos <br> [Twitter](https://twitter.com/elevesantos) <br>
   [Github](https://github.com/elevesantos)
+  * Jhonnatthan Santana Simões dos Santos <br> 
+  [Faceboook](https://www.facebook.com/jhowsantanaa) <br>
+  [GitHub](https://github.com/jhonnatthan) <br>
+  [Twitter](https://twitter.com/jhow_santanaa)
   * ...
