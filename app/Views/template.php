@@ -54,6 +54,8 @@
                 foreach ($scripts as $script) {
                     echo '<script src="' . $script . ' >';
                 }
+            } else {
+                echo '<script src="'.$scripts.'>';
             }
         }
 
