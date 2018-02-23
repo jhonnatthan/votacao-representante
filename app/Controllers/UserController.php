@@ -30,7 +30,7 @@ class UserController {
 
     }
 
-    public function renderRegister()
+    public function renderizar()
     {
         //this function render register template
         \App\View::make('login/register', array(
@@ -44,7 +44,7 @@ class UserController {
         );
     }
 
-    public function storeRegister()
+    public function armazenar()
     {
         //this function displays a new user
         //registration and data storage screen
