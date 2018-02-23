@@ -5,4 +5,8 @@ use App\Models\Usuario;
 
 class UsuarioController {
 
+    public static function verificaLogado() {
+        return $_SESSION['logado'] ?? false;
+    }
+
 }
