@@ -8,7 +8,8 @@ class ComposerStaticInit41554a34b1787765b85728e38556eb0b
 {
     public static $files = array (
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
-        '636d559b4905de07b1249f30ebda1e8d' => __DIR__ . '/../..' . '/app/helpers.php',
+        '83053ef16aa126ac55acaf223f48b7d5' => __DIR__ . '/../..' . '/app/Helpers/Conversao.php',
+        '09c189ca1d85129ba26f8c498308e7ae' => __DIR__ . '/../..' . '/app/Helpers/Validacao.php',
     );
 
     public static $prefixLengthsPsr4 = array (

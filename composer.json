@@ -8,7 +8,8 @@
             "App\\" : "app/"
         },
         "files": [
-            "app/helpers.php"
+            "app/Helpers/Conversao.php",
+            "app/Helpers/Validacao.php"
         ]
     }
 }
