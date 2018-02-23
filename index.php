@@ -23,6 +23,8 @@
 
     $app->get('/campanhas/nova', function () {
         // Formulário de cadastro de novas campanhas
+        $CampanhaController = new \App\Controllers\CampanhaController();
+        $CampanhaController->renderizar();
     });
 
     $app->post('/campanhas/nova', function() {
