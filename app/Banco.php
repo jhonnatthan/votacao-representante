@@ -78,11 +78,11 @@
 		}
 
     static function insert($tabela, $dados, $id = false) {
-			$campos = implode(', ', array_keys($dados));
-			$valores = "'" . implode("', '", $dados) . "'";
+				$campos = implode(', ', array_keys($dados));
+				$valores = "'" . implode("', '", $dados) . "'";
 
-			return "INSERT INTO {$tabela} ({$campos}) VALUES ({$valores})";
-		}
+				return "INSERT INTO {$tabela} ({$campos}) VALUES ({$valores})";
+			}
 
     static function update($tabela, $dados, $argumentos = null) {
 
