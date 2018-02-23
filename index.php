@@ -9,28 +9,40 @@
         ]
     ]);
 
-
     $app->get('/', function() {
-        $UsersController = new App\Controllers\UserController;
-        $UsersController->index();
+        // Renderiza Index
     });
 
-
-    // exibe o formulário de edição
-    $app->get('/register', function ($request)
-    {
-        // pega o ID da URL
-        $UserController = new \App\Controllers\UserController;
-        $UserController->renderRegister();
+    $app->post('/', function () {
+       // Envia formulário de Login
     });
 
-    // processa o formulário de edição
-    $app->post('/register/', function ()
-    {
-        $UserController = new \App\Controllers\UserController;
-        $UserController->storeRegister();
+    $app->get('/campanhas', function () {
+       // Exibe campanhas ativas
     });
 
+    $app->get('/campanhas/nova', function () {
+        // Formulário de cadastro de novas campanhas
+    });
+
+    $app->post('/campanhas/nova', function() {
+        // Envio de dados do formulário de campanha
+    });
+
+    $app->get('/campanha/{id}', function () {
+        // $request->getAttribute('id') para pegar a váriavel da Url
+        // Exibe campanha e seus candidatos
+    });
+
+    $app->get('/campanha/{campanha}/{candidato}', function($request) {
+        // $request->getAttribute('id') para pegar a váriavel da Url
+        // exibe os dados do candidato
+    });
+
+    $app->post('/campanha/{campanha}/{candidato}', function() {
+        // Função de cadastro de votos
+        // Cadastra voto no Candidato
+    });
 
     $app->run();
 
