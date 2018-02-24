@@ -26,8 +26,26 @@ class UsuarioController {
 
     public function login()
     {
-        // Function to login
-
+        // Funçao de login
+        $login = $_POST['login'] ?? "";
+        $senha = $_POST['senha'] ?? "";
+        $Banco = new \App\Banco();
+        $table = array("tb_usuario");
+        $args = array("cd_usuario" => ":login", "nm_senha" => ":senha");
+        $stmt = $Banco->prepare($Banco::select($table, null, $args));
+        $stmt->bindParam(":login", $login, \PDO::PARAM_STR);
+        $stmt->bindParam(":senha", $senha, \PDO::PARAM_STR);
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            session_start();
+            $user = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            $_SESSION['logado'] = true;
+            $_SESSION['usuario'] = $user[0];
+        } else {
+            $_SESSION['logado'] = false;
+            header('Location: /?error=0');
+            exit;
+        }
     }
 
     public function renderRegister()
@@ -59,6 +77,10 @@ class UsuarioController {
             header('Location: /');
             exit;
         }
+    }
+
+    public function isLogado() {
+        return isset($_SESSION['logado']) && $_SESSION['logado'];
     }
 
 }
