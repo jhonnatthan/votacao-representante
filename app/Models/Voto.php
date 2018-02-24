@@ -3,7 +3,7 @@
 namespace App\Models;
 use App\Banco;
 
-class Voto extends Banco {
+class Voto {
 
     public static function criaVoto($codigoCandidato, $codigoUsuario, $nmUsuario = null) {
 

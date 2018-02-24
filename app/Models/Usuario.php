@@ -4,11 +4,7 @@ namespace App\Models;
 use App\Banco;
 
 
-class Usuario extends Banco {
-
-    public static function logarUsuario($usuario, $senha) {
-
-    }
+class Usuario {
 
     public static function criaUsuario($usuario, $senha) {
 
