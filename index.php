@@ -11,10 +11,14 @@
 
     $app->get('/', function() {
         // Renderiza Index
+        $UsuarioController = new \App\Controllers\UsuarioController();
+        $UsuarioController->index();
     });
 
     $app->post('/', function () {
        // Envia formulário de Login
+        $UsuarioController = new \App\Controllers\UsuarioController();
+        $UsuarioController->login();
     });
 
     $app->get('/campanhas', function () {
